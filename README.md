@@ -1,6 +1,6 @@
 <h1 align="center">TypeDoc Plugin Konamimojisplosion</h1>
 
-<p align="center">TypeDoc plugin to quickly integrate [konamimojisplosion](https://github.com/JoshuaKGoldberg/Konamimojisplosion) into your docs site. 🎉 ✨ 🎆</p>
+<p align="center">TypeDoc plugin to quickly integrate <a href="https://github.com/JoshuaKGoldberg/konamimojisplosion">Konamimojisplosion</a> into your docs site. 🎉 ✨ 🎆</p>
 
 <p align="center">
 	<a href="#contributors" target="_blank">
