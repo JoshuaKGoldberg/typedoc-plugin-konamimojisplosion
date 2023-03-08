@@ -1,0 +1,70 @@
+module.exports = {
+	env: {
+		es2022: true,
+		node: true,
+	},
+	extends: [
+		"eslint:recommended",
+		"plugin:eslint-comments/recommended",
+		"plugin:regexp/recommended",
+		"prettier",
+	],
+	overrides: [
+		{
+			extends: ["plugin:markdown/recommended"],
+			files: ["**/*.{md}"],
+			processor: "markdown/markdown",
+		},
+		{
+			extends: [
+				"plugin:@typescript-eslint/recommended",
+				"plugin:@typescript-eslint/recommended-requiring-type-checking",
+				"plugin:typescript-sort-keys/recommended",
+				"plugin:@typescript-eslint/strict",
+			],
+			files: ["**/*.{ts,tsx}"],
+			parserOptions: {
+				project: "./tsconfig.eslint.json",
+			},
+			rules: {
+				// These off-by-default rules work well for this repo and we like them on.
+				"deprecation/deprecation": "error",
+			},
+		},
+		{
+			files: ["*.json", "*.jsonc"],
+			excludedFiles: ["package.json"],
+			parser: "jsonc-eslint-parser",
+			rules: {
+				"jsonc/sort-keys": "error",
+			},
+			extends: ["plugin:jsonc/recommended-with-json"],
+		},
+	],
+	parser: "@typescript-eslint/parser",
+	plugins: [
+		"@typescript-eslint",
+		"deprecation",
+		"import",
+		"regexp",
+		"simple-import-sort",
+		"typescript-sort-keys",
+	],
+	root: true,
+	rules: {
+		// These off-by-default rules work well for this repo and we like them on.
+		"import/extensions": ["error", "ignorePackages"],
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": "error",
+
+		// These on-by-default rules don't work well for this repo and we like them off.
+		"no-inner-declarations": "off",
+
+		// Stylistic concerns that don't interfere with Prettier
+		"padding-line-between-statements": "off",
+		"@typescript-eslint/padding-line-between-statements": [
+			"error",
+			{ blankLine: "always", next: "*", prev: "block-like" },
+		],
+	},
+};
